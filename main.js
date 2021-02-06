@@ -139,7 +139,7 @@ const evilBuilder = (taco) => {
     if (divId = "voldermorts-army") {
       domString += `<div class="card" style="width: 15rem; background-color: rgba(26, 21, 2, 0.357); border: 4px groove; border-color: rgb(240, 223, 154);" id=${i}>
       <img class="card-img-top" src="https://cdn.images.express.co.uk/img/dynamic/36/590x/harry-potter-theory-voldemort-horcrux-1200870.jpg?r=1573053077046">
-            <p style="color: rgb(240, 223, 154)" class="card-text">Oh No!, I always knew <b>${name}</b> had some evil in their veins!</p>
+            <p style="color: rgb(240, 223, 154)" class="card-text">Oh No!, <b>${name}</b> joined the baddies, and there is NO expulsion policy!</p>
         </div>
     </div>`;
     };
