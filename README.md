@@ -1,5 +1,38 @@
 # Sorting Hat
 
+Name of the Project
+Sorting Hat
+
+Overview of the project
+Create a card for students and sort them randomly into a hogwarts hat. If they are expelled push them into voldemort's army. 
+
+Link to your wireframes/prototype
+N/A
+
+Link to the deployed project (will learn in week 5)
+https://sorting-hat-mjc.netlify.app/
+
+Link to your project board (yes...even though it is a part of the repo)
+https://github.com/Mitchell-Crumbley/sorting-hat/projects/1
+
+Description of the user
+Student wishing to be sorted into their house. 
+
+List of features
+Arranges cards by house and then alphabetically by name. Plays a sound dependent on which house you are in. Prompts a name before submitting the form. 
+
+Screenshots of your project
+https://github.com/Mitchell-Crumbley/sorting-hat/blob/main/Sortin%20Hat.png
+
+List of contributors and links to their GH profiles
+Matthew Gonzales: https://github.com/GonzalesMatthew 
+Linddsey Satterfield: https://github.com/lindseysatterfield 
+Jesse Robinson: https://github.com/nss-evening-cohort-14
+
+Link to Loom video walkthrough of your app (no more than 1 minute long! Make it great)
+https://www.loom.com/share/cc3204ea3b2f4b8db405cdf22a758053
+
+
 ## Goals
 The goal of this project is to test your knowledge and to have a FUN time stretching yourself on your FIRST independent application that will become a part of your portfolio.
 
