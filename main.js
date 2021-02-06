@@ -97,13 +97,10 @@ const addStudentToHouse = (e) => {
 
 
 
-
-
 //Return the sorted results of an array. First look at a and b to compare and sort based on schoolHouse property. I believe because it is comparing string values it returns them alphabetically. Next, if the schoolHouse properties are the same, sort by the name property. More Info: https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ 
 const sortStudentsByHouse = (array) => {
   return array.sort((a, b) => (a.schoolHouse > b.schoolHouse) ? 1 : (a.schoolHouse === b.schoolHouse) ? ((a.name > b.name) ? 1 : -1) : -1)
 }
-
 
 
 
@@ -129,8 +126,6 @@ const studentBuilder = (taco) => {
 
 
 
-
-
 const evilBuilder = (taco) => {
   let domString = '';
   // FOR OF LOOP - This works!
@@ -146,8 +141,6 @@ const evilBuilder = (taco) => {
     printToDom("#voldermorts-army", domString);
   };
 };
-
-
 
 
 //OTHER OPTIONS!!
@@ -187,7 +180,7 @@ const errorMessage = (student) => {
     document.querySelector("#error-message").innerHTML = "";
   } else { //If student returns false when passed set div's innerHTML = to the syled div we setup on the HTML page.
     document.querySelector("#error-message").innerHTML =
-      `<div style="color: red;margin-bottom: 10px;">
+      `<div style="color: red;margin-bottom: 10px; font-size: 20pt">
         <b>Don't be shy! Say your name.</b>
       </div>`;
   }
@@ -212,7 +205,6 @@ const buttonEvents = () => {
   document.querySelector("#get-started").addEventListener("click", showForm);
   document.querySelector("#sort").addEventListener("click", addStudentToHouse);
   document.querySelector('#first-years-card-display').addEventListener("click", expelStudent);
-
   document.querySelector('#first-years-card-display').addEventListener("click", startDramatic);
   document.querySelector("#sort").addEventListener("click", resetDramatic);
   document.querySelector('#first-years-card-display').addEventListener("click", resetAudio);
@@ -230,7 +222,7 @@ function startDramatic() {
 };
 
 function resetDramatic() {
-  document.querySelector('#dramatic').src = "https://www.dailymotion.com/embed/video/xovk9r";
+  document.querySelector('#dramatic').src = "https://www.youtube.com/embed/TMx1_1z63Zs";
 };
 
 function resetAudio () {
