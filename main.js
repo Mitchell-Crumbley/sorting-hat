@@ -45,6 +45,9 @@ function showForm() {
 //     printToDom("#myForm", content);
 // };
 
+
+
+
 const sortingHat = () => {
   const houses = ["Gryffindoor", "Snakes", "Hufflepuffle", "Ravenclaw"]; //define the houses to sort between
   let sortingHat = houses[Math.floor(Math.random() * houses.length)]; //define what we will return. Example: https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array 
@@ -55,16 +58,16 @@ const sortingHat = () => {
     document.querySelector('#snake-sound').src += "?autoplay=1&start=04&end=06";
     return sortingHat;
   }   else if (sortingHat === "Gryffindoor") {
-    document.querySelector('#kitty').src += "?autoplay=1&start=03&end=07";
+    document.querySelector('#kitty').src += "?autoplay=1&start=03&end=05";
     return sortingHat;
   } else {
-    document.querySelector('#bird-noise').src += "?autoplay=1&start=03&end=07";
+    document.querySelector('#bird-noise').src += "?autoplay=1&start=04&end=07";
     return sortingHat;
   };
 
 
-
 };
+
 
 
 //C in CRUD: Create New Students
@@ -91,10 +94,18 @@ const addStudentToHouse = (e) => {
   //Reset the form after the button is clicked
 };
 
+
+
+
+
+
 //Return the sorted results of an array. First look at a and b to compare and sort based on schoolHouse property. I believe because it is comparing string values it returns them alphabetically. Next, if the schoolHouse properties are the same, sort by the name property. More Info: https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ 
 const sortStudentsByHouse = (array) => {
   return array.sort((a, b) => (a.schoolHouse > b.schoolHouse) ? 1 : (a.schoolHouse === b.schoolHouse) ? ((a.name > b.name) ? 1 : -1) : -1)
 }
+
+
+
 
 // //Creates a pie container card on the DOM
 const studentBuilder = (taco) => {
@@ -116,6 +127,10 @@ const studentBuilder = (taco) => {
   printToDom("#first-years-card-display", domString);
 };
 
+
+
+
+
 const evilBuilder = (taco) => {
   let domString = '';
   // FOR OF LOOP - This works!
@@ -131,6 +146,9 @@ const evilBuilder = (taco) => {
     printToDom("#voldermorts-army", domString);
   };
 };
+
+
+
 
 //OTHER OPTIONS!!
 
@@ -160,6 +178,10 @@ const evilBuilder = (taco) => {
 //   printToDom('#first-years-card-display', domString);
 // };
 
+
+
+
+
 const errorMessage = (student) => {
   if (student) {  //If student has a value when passed to the function set the div's innerHTML to nothing.
     document.querySelector("#error-message").innerHTML = "";
@@ -173,32 +195,35 @@ const errorMessage = (student) => {
 
 
 
+const expelStudent = (e) => {
+  if (e.target.type === 'button') { // if the target of my event is a button run the following function
+    voldermortsArmy.push(students[e.target.id]) //push the target event from the students array into the end of the voldemort array
+    students.splice(e.target.id, 1) //splice out one element from the targeted index from the student array. That is equal to our target id.  
+    studentBuilder(students); //run both card builder functions
+    evilBuilder(voldermortsArmy);
+  }
+}
+
+
+
+
+
 const buttonEvents = () => {
   document.querySelector("#get-started").addEventListener("click", showForm);
   document.querySelector("#sort").addEventListener("click", addStudentToHouse);
   document.querySelector('#first-years-card-display').addEventListener("click", expelStudent);
-  document.querySelector('#get-started').addEventListener('click', startMusic)
+
   document.querySelector('#first-years-card-display').addEventListener("click", startDramatic);
   document.querySelector("#sort").addEventListener("click", resetDramatic);
   document.querySelector('#first-years-card-display').addEventListener("click", resetAudio);
-  // document.querySelector("#sort").addEventListener("click", excellentSound);
 
 };
 
 
-const startMusic = (e) => {
-  document.querySelector("#background-music").src += "?autoplay=1";
 
-  var player = new Dailymotion.Player('#background-music', {
-    videoId: 'x3ulbtq',
-    events: {
-      'onReady': function (event) {
-        event.target.setVolume(.05);
-        event.target.playVideo();
-      }
-    }
-  });
-}
+
+// AUDIO STUFFFF
+
 
 function startDramatic() {
   document.querySelector('#dramatic').src += "?autoplay=1";
@@ -212,43 +237,14 @@ function resetAudio () {
   document.querySelector('#excellent').src= "https://www.youtube.com/embed/7mi4h00fedY";
   document.querySelector('#snake-sound').src= "https://www.youtube.com/embed/sk6_M9bUx7U";
   document.querySelector('#kitty').src= "https://www.youtube.com/embed/4sw23ODXIQI";
-  document.querySelector('#bird-noise').src = "https://www.youtube.com/embed/teXK2kOCkU8";
+  document.querySelector('#bird-noise').src = "https://www.youtube.com/embed/n0yYjjEdRlg";
+
 }
 
-// function excellentSound () {
-//   if (sortingHat() == "Hufflepuffle") {
-//     document.querySelector('#excellent').src += "?autoplay=1";
-//   } else {
-//     document.querySelector('#excellent').src += "https://www.youtube.com/embed/7mi4h00fedY";
-//   };
-// };
-
-// // document.querySelector("#dramatic").src += "?autoplay=1";
-
-// // var player = new Dailymotion.Player('#dramatic', {
-// //     videoId: 'xovk9r',
-// //     events: {
-// //       'onReady': function (event) {
-// //         event.target.setVolume(.05);
-// //         event.target.playVideo();
-//       }
-//     }
-//   });
-// }
 
 
 
-const expelStudent = (e) => {
-  if (e.target.type === 'button') {
-    voldermortsArmy.push(students[e.target.id])
-    students.splice(e.target.id, 1)
-    studentBuilder(students);
-    evilBuilder(voldermortsArmy);
-  }
-}
 
-// var videoVolume = document.getElementById("#background-music");
-// videoVolume.volume=.2;
 
 const init = () => {
   studentBuilder(students);
